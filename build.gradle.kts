@@ -30,10 +30,11 @@ repositories {
 }
 dependencies {
     minecraft("com.mojang:minecraft:$minecraft")
+    mappings(loom.officialMojangMappings())
 
     if (loader == "fabric") {
         modImplementation("net.fabricmc:fabric-loader:${mod.dep("fabric_loader")}")
-        mappings("net.fabricmc:yarn:$minecraft+build.${mod.dep("yarn_build")}:v2")
+//        mappings("net.fabricmc:yarn:$minecraft+build.${mod.dep("yarn_build")}:v2")
         modImplementation("com.terraformersmc:modmenu:${mod.dep("modmenu_version")}")
 
         //some features (like automatic resource loading from non vanilla namespaces) work only with fabric API installed
@@ -44,7 +45,7 @@ dependencies {
     }
     if (loader == "forge") {
         "forge"("net.minecraftforge:forge:${minecraft}-${mod.dep("forge_loader")}")
-        mappings("net.fabricmc:yarn:$minecraft+build.${mod.dep("yarn_build")}:v2")
+//        mappings("net.fabricmc:yarn:$minecraft+build.${mod.dep("yarn_build")}:v2")
 
         "io.github.llamalad7:mixinextras-forge:${mod.dep("mixin_extras")}".let {
             implementation(it)
@@ -53,12 +54,13 @@ dependencies {
     }
     if (loader == "neoforge") {
         "neoForge"("net.neoforged:neoforge:${mod.dep("neoforge_loader")}")
-        mappings(loom.layered {
-            mappings("net.fabricmc:yarn:$minecraft+build.${mod.dep("yarn_build")}:v2")
-            mod.dep("neoforge_patch").takeUnless { it.startsWith('[') }?.let {
-                mappings("dev.architectury:yarn-mappings-patch-neoforge:$it")
-            }
-        })
+//        mappings(loom.layered {
+//            mappings("net.fabricmc:yarn:$minecraft+build.${mod.dep("yarn_build")}:v2")
+//            mod.dep("neoforge_patch").takeUnless { it.startsWith('[') }?.let {
+//                mappings("dev.architectury:yarn-mappings-patch-neoforge:$it")
+//            }
+//        })
+
     }
 }
 

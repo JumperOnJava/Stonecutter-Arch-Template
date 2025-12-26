@@ -1,5 +1,5 @@
 //? if fabric {
-package com.example.template.platforms.fabric;
+/*package com.example.template.platforms.fabric;
 
 import com.example.template.ModPlatform;
 import net.fabricmc.api.ModInitializer;
@@ -24,4 +24,4 @@ public class TempLateFabric implements ModInitializer {
 		}
 	}
 }
-//?}
+*///?}

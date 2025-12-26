@@ -5,7 +5,7 @@ plugins {
     id("com.gradleup.shadow") version "9.3.0" apply false
     id("me.modmuss50.mod-publish-plugin") version "0.8.4" apply false
 }
-stonecutter active "1.20.1-fabric" /* [SC] DO NOT EDIT */
+stonecutter active "1.21.9-neoforge" /* [SC] DO NOT EDIT */
 stonecutter.automaticPlatformConstants = true
 
 // Builds every version into `build/libs/{mod.version}/{loader}`
